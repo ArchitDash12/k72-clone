@@ -25,6 +25,12 @@ const Agents = () => {
         start: 'top 28%',
         end: 'top -100%',
         pin: true,
+        pinSpacing: true,
+        pinReparent: true,
+        pinType: 'transform',
+        scrub: 1,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
         onUpdate: (elem) => {
           let imageIndex;
           if(elem.progress < 1) {
@@ -34,7 +40,6 @@ const Agents = () => {
             imageIndex = imageArray.length - 1;
           }
           
-
           imageRef.current.src = imageArray[imageIndex];
         }
       }
@@ -42,9 +47,9 @@ const Agents = () => {
   })
 
   return (
-    <div>
-      <div className="section1">
-        <div ref={imageDivRef} className="h-[20vw] w-[15vw] overflow-hidden top-96 left-[30vw] rounded-3xl absolute">
+    <div className="parent">
+      <div id="page1" className="py-1 text-black">
+        <div ref={imageDivRef} className="h-[20vw] w-[15vw] overflow-hidden top-80 left-[30vw] rounded-3xl absolute">
           <img
             ref={imageRef}
             className="h-full object-cover w-full"
@@ -71,7 +76,7 @@ const Agents = () => {
           </div>
         </div>
       </div>
-      <div className="section2 h-screen">
+      <div id="page2" className="h-screen">
 
       </div>
     </div>

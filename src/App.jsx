@@ -6,12 +6,14 @@ import Projects from "./pages/Projects";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
+import Navbar from "./components/Navigation/Navbar";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
   return (
-    <div className="text-white">
+    <div>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/agents" element={<Agents />} />

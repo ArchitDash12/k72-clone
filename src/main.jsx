@@ -9,8 +9,9 @@ import Stairs from './components/common/Stairs.jsx';
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
-      <Stairs />
-      <App />
+      <Stairs>
+        <App />
+      </Stairs>
     </BrowserRouter>
   </React.StrictMode>
 )
